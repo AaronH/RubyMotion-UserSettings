@@ -51,7 +51,7 @@ In its simplest form, the `rm_settable` function is called with a list of symbol
   rm_settable :name, :background_color
 ```
 
-By default, the keys expect the settings for your app to be passed and stored as strings.  If you wish to use another type, you may declare that as a hash on the key.
+By default, the settings are stored as objects. If you wish to cast as a specific type, you may declare that as a hash on the key.
 
 ```ruby
   rm_settable :name, age: {type: :integer}, completed_tutorial: {type: :boolean}
@@ -60,7 +60,6 @@ By default, the keys expect the settings for your app to be passed and stored as
 The types available derive from the NSUserDefault class.  They can be :array, :boolean, :data, :dictionary, :double, :float, :integer, :object, :string_array, :string, or :url.
 
 ### Options
-
 
 Additionally, you can include a hash of options to affect the way RMSettings works.
 
@@ -88,9 +87,9 @@ Additionally, you can include a hash of options to affect the way RMSettings wor
 
 *   `default_type` _(:string)_
 
-    Items being saved expect to be Strings. You many also specify the
-    required type when you declare the setting names. With this
-    setting you may override the default type expected for all settings.
+    Items are saved as objects. You many also specify a particular
+    type when you declare the setting names. With this setting you
+    may override the default type for all settings.
 
 *   `lenient_keys` _(false)_
 

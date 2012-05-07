@@ -11,8 +11,8 @@ module RMSettable
     #    rm_settable :name, :background_color
     #
     #
-    # By default, the keys expect the stored settings to be passed and stored as strings.
-    # If you wish to use another type, you may declare that as a hash on the key instead.
+    # By default, the keys store and retrieve generic objects. If you wish to specify a
+    # particular type, you may declare that as a hash on the key.
     #
     #    rm_settable :name, age: {type: :integer}, superstar: {type: :boolean}
     #
@@ -34,10 +34,10 @@ module RMSettable
     #                   this to false. Be aware that iOS will still save the settings
     #                   periodically without being explicitly called.
     #
-    #    :default_type  :string (default)
-    #                   Items being saved expect to be strings. You many specify the type
+    #    :default_type  :object (default)
+    #                   Items are saved as objects. You many specify the type
     #                   when you declare the setting names or override the default
-    #                   expected for all objects.
+    #                   expected for all item.
     #
     #    :lenient_keys  false (default)
     #                   If you don't want to declare any or all of the settings you will

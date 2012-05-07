@@ -14,7 +14,7 @@ class RMSettings
     user_options = (args.select{|a| a.is_a? Hash}.first || {}).delete(:options) || {}
     @options  = { autosave:     true,
                   lenient_keys: false,
-                  default_type: :string}.merge(user_options)
+                  default_type: :object}.merge(user_options)
 
     args.flatten.each do |item|
       if item.is_a?(Symbol)
@@ -32,7 +32,6 @@ class RMSettings
     # Save all current settings to the device.
     # Can be called manually but is generally called automatically
     # after updating a key unless the :autosave option is false.
-    puts "Saving"
     settings.synchronize
   end
 
