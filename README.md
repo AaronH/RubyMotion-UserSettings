@@ -104,9 +104,11 @@ A method named `settings` is added to the application's delegate and supplies a 
 ```ruby
   # write a setting
   UIApplication.sharedApplication.delegate.settings.name = 'Karl Pilkington'
+  UIApplication.sharedApplication.delegate.settings[:head_shape] = 'Orange'
 
   # read a setting
   @name = UIApplication.sharedApplication.delegate.settings.name
+  @head_shape = UIApplication.sharedApplication.delegate.settings[:head_shape]
 
   # check a setting's boolean value or blankness
   UIApplication.sharedApplication.delegate.settings.name?

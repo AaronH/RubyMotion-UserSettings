@@ -99,6 +99,7 @@ class RMSettings
     # return the current value
     setting_for key
   end
+  alias :[]= :save_setting
 
   def setting_for(key)
     # Read the contents of a given key.
@@ -134,6 +135,7 @@ class RMSettings
       settings.URLForKey        key
     end
   end
+  alias :[] :setting_for
 
   def remove(key)
     # Resets the key to it's default value and returns that value
