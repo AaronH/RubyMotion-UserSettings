@@ -68,7 +68,7 @@ Additionally, you can include a hash of options to affect the way RMSettings wor
 ```
 
 ```ruby
-  rm_settable options: {:lenient_keys}
+  rm_settable options: {lenient_keys: true}
 ```
 
 #### Available Options
@@ -85,7 +85,7 @@ Additionally, you can include a hash of options to affect the way RMSettings wor
     on the app.  To prevent this behaviour, you must override these methods
     in your `app_delegate.rb`.
 
-*   `default_type` _(:string)_
+*   `default_type` _(:object)_
 
     Items are saved as objects. You many also specify a particular
     type when you declare the setting names. With this setting you
@@ -103,11 +103,11 @@ A method named `settings` is added to the application's delegate and supplies a 
 
 ```ruby
   # write a setting
-  UIApplication.sharedApplication.delegate.settings.name = 'Karl Pilkington'
+  UIApplication.sharedApplication.delegate.settings.name         = 'Karl Pilkington'
   UIApplication.sharedApplication.delegate.settings[:head_shape] = 'Orange'
 
   # read a setting
-  @name = UIApplication.sharedApplication.delegate.settings.name
+  @name       = UIApplication.sharedApplication.delegate.settings.name
   @head_shape = UIApplication.sharedApplication.delegate.settings[:head_shape]
 
   # check a setting's boolean value or blankness
