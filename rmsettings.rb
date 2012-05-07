@@ -1,3 +1,6 @@
+# rmsettings.rb
+# https://github.com/AaronH/RubyMotion-UserSettings
+
 class RMSettings
   attr_accessor :settings, :available, :keys, :options
 

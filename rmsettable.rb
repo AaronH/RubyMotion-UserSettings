@@ -1,3 +1,6 @@
+# rmsettable.rb
+# https://github.com/AaronH/RubyMotion-UserSettings
+
 module RMSettable
 
   def rm_settable(*args)
